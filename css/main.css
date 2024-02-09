@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*O * seleciona todos os elementos da página que não foram estilizados.*/
+/*Padding e border influenciam no tamanho do box model. A margem também faz parte, mas não altera a altura da caixa, mas influenciará nos elementos externos.*/
+/*Box-sizing: esta propriedade deve ser usada para que o layout seja respeitado pelo navegador.*/
+
+body > header{
+    background-color: #2f3640;
+    padding: 16px 0;
+    color: #f5f6fa;
+}
+
+header .conteudo{
+    display: flex;/*Usado para mudar o posicionamento do 'menu'.*/
+    align-items: center; /*Usado para centralizar os links do menu.*/
+    justify-content: space-between;/*Usado aqui colocar o título e o menu em cada lateral.*/
+}
+
+header li{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+}
+/*O display inline foi usado para colocar os ítens da lista lado a lado.*/
+
+header li a{
+    color: #f5f6fa;
+    text-decoration: none;
+
+}
+
+.conteudo{
+    width: 1366px;
+    margin: 0 auto;
+}
+/*A largura de 1366px é a de um notebook padrão.*/
+
+.articles{
+    display: flex; /*Propriedade usada para colocar os artigos da mesma seção lado a lado no site.*/
+    flex-wrap: wrap;/*Propriedade usada para respeitar a largura de 30% do article e assim, manter a página com 3 notícias lado a lado. */
+    justify-content: space-between; /*Propriedade para distribuir os 10% de espaço vago entre as margens de cada artigo.*/
+}
+
+.articles img{
+    /*height: 180px;*/
+    width: 100%;
+}
+/*Todas as imagens estão dentro da div articles, por isso, não escrevi como na aula: .articles article img.*/
+
+article{
+    width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+/*Aqui também, como todos os artigos estão dentro de articles, não repeti a div.*/
+/*A posição relativa do tag pai faz com que a imagem, mesmo com posição absoluta fique dentro do espaço da tag. Já a posição fixa faz com que o item fique preso na tela, independente do rolamento da página.*/
+/*Inclui a fonte no seletor já existente, pois não vi necessidade de criar um novo somente para isso.*/
+
+section{
+    padding: 16px 0;
+}
+
+section h2,
+.articles article{
+    margin-bottom: 16px;
+}
+
+.articles article h3{
+    margin: 8px 0;
+    font-family: 'Times New Roman', Times, serif; /*Incluí esta propriedade para manter a fonte como Times New Roman.*/
+    font-size: 24px;
+}
+
+article a{
+    background-color: blue;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    display: inline-block; /*O elemento a tem por padrão o display inline e foi necessário mudar para ajustar o "botão" aos respectivos textos.*/
+    font-weight: bold;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+article a:hover{
+    text-decoration: underline;
+}
+
+section h2{
+    font-size: 32px;
+}
+
+#esportes{
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+#esportes article a{
+    background-color: #009432;
+}
+
+#economia{
+    background-color: #f5f4d1;
+}
+
+#economia article a{
+    background-color: #ff9f1a;
+}
+
+#entretenimento{
+    background-color: rgb(235, 214, 222);
+}
+
+#entretenimento article a{
+    background-color: rgb(172, 51, 92);
+}
+
+#tech{
+    background-color: rgb(202, 228, 245);
+}
+
+#tech article a{
+    background-color: rgb(21, 109, 164);
+}
